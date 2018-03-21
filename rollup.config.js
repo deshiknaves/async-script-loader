@@ -1,7 +1,7 @@
-import babel from 'rollup-plugin-babel';
-import eslint from 'rollup-plugin-eslint';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import babel from 'rollup-plugin-babel'
+import eslint from 'rollup-plugin-eslint'
+import resolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
 
 const plugins = [
   resolve({
@@ -14,7 +14,7 @@ const plugins = [
   babel({
     exclude: 'node_modules/**',
   }),
-];
+]
 
 export default [
   {
@@ -42,4 +42,4 @@ export default [
     ],
     plugins,
   }
-];
+]

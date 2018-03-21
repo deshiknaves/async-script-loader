@@ -2,7 +2,8 @@
   "name": "async-script-loader",
   "version": "0.0.1-alpha.1",
   "description": "Load a script asynchronously",
-  "main": "index.js",
+  "main": "lib/bundle/main.min.js",
+  "module": "lib/esm2015/main.js",
   "scripts": {
     "prebuild": "rimraf ./lib",
     "build": "rollup -c",

@@ -7,9 +7,6 @@
     "globals": {
       "ENV": true
     },
-    "plugins": [
-      "jasmine"
-    ],
     "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module"

@@ -1,8 +1,8 @@
 /* global require */
-const gulp = require('gulp');
-const uglify = require('gulp-uglify');
-const rename = require('gulp-rename');
-const sourcemaps = require('gulp-sourcemaps');
+const gulp = require('gulp')
+const uglify = require('gulp-uglify')
+const rename = require('gulp-rename')
+const sourcemaps = require('gulp-sourcemaps')
 
 gulp.task('compress', () => {
   return gulp.src('lib/bundle/*.js')
@@ -12,5 +12,5 @@ gulp.task('compress', () => {
       extname: '.min.js'
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('lib/bundle'));
-});
+    .pipe(gulp.dest('lib/bundle'))
+})
