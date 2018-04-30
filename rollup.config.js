@@ -37,9 +37,7 @@ export default [
       format: 'es',
       file: 'lib/esm2015/main.js',
     },
-    external: [
-      'blueimp-md5'
-    ],
+    external: ['uuid'],
     plugins,
-  }
+  },
 ]

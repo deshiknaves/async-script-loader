@@ -2,15 +2,20 @@
     "env": {
         "browser": true,
         "es6": true,
-        "jasmine": true
+        "jasmine": true,
+        "jest/globals": true
     },
     "globals": {
       "ENV": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
     "parserOptions": {
         "sourceType": "module"
     },
+    "plugins": ["jest"],
     "rules": {
         "indent": [
             "error",
