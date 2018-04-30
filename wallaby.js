@@ -1,5 +1,5 @@
 /* global module, process */
-module.exports = function() {
+module.exports = function(wallaby) {
   process.env.NODE_ENV = 'test'
 
   return {
@@ -14,9 +14,12 @@ module.exports = function() {
 
     testFramework: 'jest',
 
-    setup: function(wallaby) {
+    compilers: {
+      '**/*.js': wallaby.compilers.babel(),
+    },
+
+    setup: function() {
       var jestConfig = require('./package.json').jest
-      jestConfig.globals = { __DEV__: true }
       wallaby.testFramework.configure(jestConfig)
     },
   }
