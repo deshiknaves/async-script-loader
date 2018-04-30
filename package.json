@@ -53,6 +53,6 @@
     "rollup-watch": "^4.3.1"
   },
   "dependencies": {
-    "blueimp-md5": "^2.10.0"
+    "uuid": "^3.2.1"
   }
 }

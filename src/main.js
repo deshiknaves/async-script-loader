@@ -1,4 +1,4 @@
-import md5 from 'blueimp-md5'
+import uuid from 'uuid/v4'
 
 const LOADED = 'loaded'
 const ERROR = 'error'
@@ -12,7 +12,7 @@ const scriptMap = new Map()
  *
  * @return {void}
  */
-const cleanup = (callback) => {
+const cleanup = callback => {
   if (!window[callback] || typeof window[callback] !== 'function') {
     return
   }
@@ -30,8 +30,8 @@ const cleanup = (callback) => {
  */
 export const load = (script, reload = false) => {
   let src = script
-  const scriptKey = reload ? `${script}${+new Date()}` : script
-  const key = md5(scriptKey)
+  const id = uuid()
+  const key = reload ? `${script}${id}` : script
   if (scriptMap.has(key)) {
     const item = scriptMap.get(key)
     if (item.promise) {
@@ -45,16 +45,15 @@ export const load = (script, reload = false) => {
     return Promise.resolve(null, item)
   }
 
-  const callbackName = `callback_${key}`
-  const tag = document.createElement('script')
-  const body = document.getElementsByTagName('body')[0]
+  const callbackName = `callback_${uuid().replace(/-/g, '_')}`
+  const tag = window.document.createElement('script')
   tag.type = 'text/javascript'
   tag.async = false
 
   // Create the promise to return if it is already
   // resolving
   const promise = new Promise((resolve, reject) => {
-    const handleResult = state => (evt) => {
+    const handleResult = state => evt => {
       const instance = scriptMap.get(key)
       if (state === LOADED) {
         instance.loaded = true
@@ -87,7 +86,7 @@ export const load = (script, reload = false) => {
 
     // Start loading the script
     tag.src = src
-    body.appendChild(tag)
+    window.document.body.appendChild(tag)
   })
 
   const initialState = {
