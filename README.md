@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/deshiknaves/async-script-loader.svg?branch=master)](https://travis-ci.org/deshiknaves/async-script-loader)
+
 # Async Script Loader
 
 The package will append a script to the body and load it asynchronously.
