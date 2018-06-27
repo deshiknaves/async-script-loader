@@ -13,7 +13,7 @@ Simply import the module and pass it the src to load.
 ```javascript
 import asyncScriptLoader from 'async-script-loader'
 
-loadScript('https://url.to/script.js')
+asyncScriptLoader('https://url.to/script.js')
       .then(() => {
         console.log('script has been loaded')
       })
@@ -27,7 +27,7 @@ Some scripts provide can take a callback that is executed once the script is loa
 ```javascript
 import asyncScriptLoader from 'async-script-loader'
 
-loadScript('https://url.to/script.js?callback=CALLBACK_PLACEHOLDER')
+asyncScriptLoader('https://url.to/script.js?callback=CALLBACK_PLACEHOLDER')
       .then(() => {
         console.log('script has been loaded')
       })
@@ -41,7 +41,7 @@ If you want to load the script every time it is requested, simply:
 ```javascript
 import asyncScriptLoader from 'async-script-loader'
 
-loadScript('https://url.to/script.js', true) // Second parameter is reload
+asyncScriptLoader('https://url.to/script.js', true) // Second parameter is reload
       .then(() => {
         console.log('script has been loaded')
       })
