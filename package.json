@@ -1,6 +1,6 @@
 {
   "name": "async-script-loader",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1",
   "description": "Load a script asynchronously",
   "main": "lib/bundle/main.min.js",
   "module": "lib/esm2015/main.js",
